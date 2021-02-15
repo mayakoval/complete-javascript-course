@@ -44,17 +44,20 @@
 // }
 
 // turning switch statement into if-else
-if (day === 'monday') {
-	console.log('Plan your week');
-} else if (day === 'tuesday') {
-	console.log('Excercise');
-} else if (day === 'wednesday' || day === 'thursday') {
-	console.log('Write code')
-} else if (day === 'friday') {
-	console.log('Read articles')
-} else if (day === 'saturday' || day === 'sunday') {
-	console.log('Enjoy your weekend')
-} else {
-	console.log('Not a valid day')
-}
+// if (day === 'monday') {
+// 	console.log('Plan your week');
+// } else if (day === 'tuesday') {
+// 	console.log('Excercise');
+// } else if (day === 'wednesday' || day === 'thursday') {
+// 	console.log('Write code')
+// } else if (day === 'friday') {
+// 	console.log('Read articles')
+// } else if (day === 'saturday' || day === 'sunday') {
+// 	console.log('Enjoy your weekend')
+// } else {
+// 	console.log('Not a valid day')
+// }
 
+// ternary
+// const age = 20;
+// age >= 18 ? console.log('Can vote') : console.log('Wait to 18');
