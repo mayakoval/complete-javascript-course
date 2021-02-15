@@ -32,13 +32,29 @@
 // }
 
 // challenge #3
-const scoreDolphins = (96 + 108 + 89) / 3;
-const scoreKoalas = (88 + 91 + 110) / 3;
+// const scoreDolphins = (96 + 108 + 89) / 3;
+// const scoreKoalas = (88 + 91 + 110) / 3;
 
-if (scoreKoalas === scoreDolphins) {
-	console.log(`It's a draw with both teams scoring ${scoreKoalas}!`);
-} else if (scoreKoalas > scoreDolphins) {
-	console.log(`Koalas win with ${scoreKoalas} vs ${scoreDolphins} for Dolphins`);
-} else if (scoreKoalas < scoreDolphins) {
-	console.log(`Dolphins win with ${scoreDolphins} vs ${scoreKoalas} for Koalas`);
+// if (scoreKoalas === scoreDolphins) {
+// 	console.log(`It's a draw with both teams scoring ${scoreKoalas}!`);
+// } else if (scoreKoalas > scoreDolphins) {
+// 	console.log(`Koalas win with ${scoreKoalas} vs ${scoreDolphins} for Dolphins`);
+// } else if (scoreKoalas < scoreDolphins) {
+// 	console.log(`Dolphins win with ${scoreDolphins} vs ${scoreKoalas} for Koalas`);
+// }
+
+// turning switch statement into if-else
+if (day === 'monday') {
+	console.log('Plan your week');
+} else if (day === 'tuesday') {
+	console.log('Excercise');
+} else if (day === 'wednesday' || day === 'thursday') {
+	console.log('Write code')
+} else if (day === 'friday') {
+	console.log('Read articles')
+} else if (day === 'saturday' || day === 'sunday') {
+	console.log('Enjoy your weekend')
+} else {
+	console.log('Not a valid day')
 }
+
