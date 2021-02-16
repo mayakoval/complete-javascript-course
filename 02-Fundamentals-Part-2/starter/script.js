@@ -47,3 +47,13 @@
 // }
 
 // console.log(calcAge2(1990))
+
+// arrow function
+
+calcAge3 = (birthYear) => {
+	d = new Date();
+	const currentYear = d.getFullYear();
+	return currentYear - birthYear;
+}
+
+console.log(calcAge3(1967)); 
