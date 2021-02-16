@@ -1,4 +1,4 @@
-// 'use strict';
+'use strict';
 
 // let hasDriversLicence = false;
 // const passTest = true;
@@ -50,10 +50,49 @@
 
 // arrow function
 
-calcAge3 = (birthYear) => {
-	d = new Date();
-	const currentYear = d.getFullYear();
-	return currentYear - birthYear;
+// const calcAge3 = (birthYear) => {
+// 	d = new Date();
+// 	const currentYear = d.getFullYear();
+// 	return currentYear - birthYear; // return can be omitted only in one-line code
+// }
+
+// console.log(calcAge3(1967));
+
+// challenge #1
+
+const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
+
+// test values 1
+let scoreDolphins = calcAverage(44, 23, 71);
+let scoreKoalas = calcAverage(65, 54, 49);
+
+// checkWinner for taking average score as parameters and logs the winner
+const checkWinner = (avgDolphins, avgKoalas) => {
+	if (avgDolphins >= avgKoalas * 2) {
+		console.log(`Dolphins win with ${avgDolphins} to ${avgKoalas} Koalas score`);
+	} else if (avgKoalas >= avgDolphins * 2) {
+		console.log(`Koalas win with ${avgKoalas} to ${avgDolphins} Dolphins score`);
+	} else {
+		console.log('There are no winners');
+	}
 }
 
-console.log(calcAge3(1967)); 
+checkWinner(scoreDolphins, scoreKoalas);
+
+// test values 2
+scoreDolphins = calcAverage(85, 54, 41);
+scoreKoalas = calcAverage(23, 34, 27);
+
+checkWinner(scoreDolphins, scoreKoalas);
+
+
+
+
+
+
+
+
+
+
+
+
