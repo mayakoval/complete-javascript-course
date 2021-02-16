@@ -60,34 +60,37 @@
 
 // challenge #1
 
-const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
+// const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
 
-// test values 1
-let scoreDolphins = calcAverage(44, 23, 71);
-let scoreKoalas = calcAverage(65, 54, 49);
+// // test values 1
+// let scoreDolphins = calcAverage(44, 23, 71);
+// let scoreKoalas = calcAverage(65, 54, 49);
 
-// checkWinner for taking average score as parameters and logs the winner
-const checkWinner = (avgDolphins, avgKoalas) => {
-	if (avgDolphins >= avgKoalas * 2) {
-		console.log(`Dolphins win with ${avgDolphins} to ${avgKoalas} Koalas score`);
-	} else if (avgKoalas >= avgDolphins * 2) {
-		console.log(`Koalas win with ${avgKoalas} to ${avgDolphins} Dolphins score`);
-	} else {
-		console.log('There are no winners');
-	}
-}
+// // checkWinner for taking average score as parameters and logs the winner
+// const checkWinner = (avgDolphins, avgKoalas) => {
+// 	if (avgDolphins >= avgKoalas * 2) {
+// 		console.log(`Dolphins win with ${avgDolphins} to ${avgKoalas} Koalas score`);
+// 	} else if (avgKoalas >= avgDolphins * 2) {
+// 		console.log(`Koalas win with ${avgKoalas} to ${avgDolphins} Dolphins score`);
+// 	} else {
+// 		console.log('There are no winners');
+// 	}
+// }
 
-checkWinner(scoreDolphins, scoreKoalas);
+// checkWinner(scoreDolphins, scoreKoalas);
 
-// test values 2
-scoreDolphins = calcAverage(85, 54, 41);
-scoreKoalas = calcAverage(23, 34, 27);
+// // test values 2
+// scoreDolphins = calcAverage(85, 54, 41);
+// scoreKoalas = calcAverage(23, 34, 27);
 
-checkWinner(scoreDolphins, scoreKoalas);
+// checkWinner(scoreDolphins, scoreKoalas);
 
-
-
-
+// arrays
+// #push for adding an element at the end
+// #unshift for adding an element at the beginning
+// #pop for removing the last element
+// #shift for removing the first element
+// #includes for strict equality, e.g. 23 !== '23'
 
 
 
