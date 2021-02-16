@@ -103,9 +103,16 @@
 // const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
 // const totals = [bills[0] + tips[0]]
 
+// object - like hash
 
+// const car = {
+// 	make: 'BMW', // make is a property (key)
+// 	model: 'whatever',
+// 	age: 10,
+// 	miles: 60000,
+// 	citiesVisited: ['Paris', 'Milan', 'London']
+// }
 
-
-
+// console.log(car)
 
 
