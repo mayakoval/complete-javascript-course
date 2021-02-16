@@ -92,6 +92,16 @@
 // #shift for removing the first element
 // #includes for strict equality, e.g. 23 !== '23'
 
+// challenge #2
+
+// const calcTip = billValue => {
+// 	const tip = billValue >= 50 && billValue <= 300 ? 0.15 * billValue : 0.2 * billValue;
+// 	console.log(`The bill was ${billValue}, the tip was ${tip}, and the total value ${billValue + tip}`);
+// }
+
+// const bills = [125, 555, 44]
+// const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+// const totals = [bills[0] + tips[0]]
 
 
 
