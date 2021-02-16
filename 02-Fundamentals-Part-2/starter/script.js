@@ -105,14 +105,32 @@
 
 // object - like hash
 
-// const car = {
-// 	make: 'BMW', // make is a property (key)
-// 	model: 'whatever',
-// 	age: 10,
-// 	miles: 60000,
-// 	citiesVisited: ['Paris', 'Milan', 'London']
-// }
+const car = {
+	make: 'BMW', // make is a property (key)
+	model: 'whatever',
+	age: 10,
+	miles: 60000,
+	citiesVisited: ['Paris', 'Milan', 'London'],
+	isInsured: false,
 
-// console.log(car)
+	// calcAge as car's property
+	// calcAge: function(birthYear) {
+	// 	return 2021 - birthYear;
+	// }
 
+	// this acting as self, fetches data belonging to car
+	calcYear: function() {
+		console.log(this);
+		return 2021 - this.age;
+	}
+}
+
+// console.log(car.calcAge(2011));
+
+console.log(car.calcYear());
+
+// console.log(car.citiesVisited) same as console.log(car['citiesVisited'])
+car.color = 'silver';
+
+console.log(car)
 
