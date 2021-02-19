@@ -142,41 +142,47 @@
 
 // console.log(car.getSummary());
 
-// challenge #3
+// // challenge #3
 
-const mark = {
-	fullName: "Mark Miller",
-	weight: 78,
-	height: 1.69,
+// const mark = {
+// 	fullName: "Mark Miller",
+// 	weight: 78,
+// 	height: 1.69,
 
-	calcBMI: function(weight, height) {
-		this.BMI = this.weight / (this.height ** 2);
-		return this.BMI;
-	}
-};
+// 	calcBMI: function(weight, height) {
+// 		this.BMI = this.weight / (this.height ** 2);
+// 		return this.BMI;
+// 	}
+// };
 
-const john = {
-	fullName: "John Smith",
-	weight: 92,
-	height: 1.95,
+// const john = {
+// 	fullName: "John Smith",
+// 	weight: 92,
+// 	height: 1.95,
 
-	calcBMI: function(weight, height) {
-		this.BMI = this.weight / (this.height ** 2);
-		return this.BMI;
-	}
-};
+// 	calcBMI: function(weight, height) {
+// 		this.BMI = this.weight / (this.height ** 2);
+// 		return this.BMI;
+// 	}
+// };
 
-mark.calcBMI();
-john.calcBMI();
+// mark.calcBMI();
+// john.calcBMI();
 
-console.log(mark.BMI, john.BMI);
+// console.log(mark.BMI, john.BMI);
 
-if (mark.BMI > john.BMI) {
-	console.log(`${mark.fullName} has BMI of ${mark.BMI}, which is more than ${john.fullName}'s BMI of ${john.BMI}.`);
-} else if (john.BMI > mark.BMI) {
-	console.log(`${john.fullName} has BMI of ${john.BMI}, which is more than ${mark.fullName}'s BMI of ${mark.BMI}.`);
-} else {
-	console.log(`Both ${john.fullName} and ${mark.fullName} have the same BMI of ${mark.BMI}.`)
+// if (mark.BMI > john.BMI) {
+// 	console.log(`${mark.fullName} has BMI of ${mark.BMI}, which is more than ${john.fullName}'s BMI of ${john.BMI}.`);
+// } else if (john.BMI > mark.BMI) {
+// 	console.log(`${john.fullName} has BMI of ${john.BMI}, which is more than ${mark.fullName}'s BMI of ${mark.BMI}.`);
+// } else {
+// 	console.log(`Both ${john.fullName} and ${mark.fullName} have the same BMI of ${mark.BMI}.`)
+// }
+
+// loops
+// initialise rep with value 1, stop counter at 10, increment by 1 (like rep += 1)
+for(let rep = 1; rep <= 10; rep++) {
+	console.log(`Lifting weights rep ${rep}`);
 }
 
 
