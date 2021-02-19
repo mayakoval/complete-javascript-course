@@ -103,43 +103,81 @@
 // const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
 // const totals = [bills[0] + tips[0]]
 
-// object - like hash
+// // object - like hash
 
-const car = {
-	make: 'BMW', // make is a property (key)
-	model: 'whatever',
-	age: 10,
-	miles: 60000,
-	citiesVisited: ['Paris', 'Milan', 'London'],
-	isInsured: true,
+// const car = {
+// 	make: 'BMW', // make is a property (key)
+// 	model: 'whatever',
+// 	age: 10,
+// 	miles: 60000,
+// 	citiesVisited: ['Paris', 'Milan', 'London'],
+// 	isInsured: true,
 
-	// calcAge as car's property
-	// calcAge: function(birthYear) {
-	// 	return 2021 - birthYear;
-	// }
+// 	// calcAge as car's property
+// 	// calcAge: function(birthYear) {
+// 	// 	return 2021 - birthYear;
+// 	// }
 
-	// this acting as self, fetches data belonging to car
-	calcYear: function() {
-		console.log(this);
-		return 2021 - this.age;
-	},
+// 	// this acting as self, fetches data belonging to car
+// 	calcYear: function() {
+// 		console.log(this);
+// 		return 2021 - this.age;
+// 	},
 
-	// summary
-	getSummary: function() {
-		return `This car is a ${this.make} model ${this.model} and is ${this.age} old. 
-		It is ${this.isInsured === true ? "" : "not"} insured and visited ${this.citiesVisited[0]}.`;
+// 	// summary
+// 	getSummary: function() {
+// 		return `This car is a ${this.make} model ${this.model} and is ${this.age} old. 
+// 		It is ${this.isInsured === true ? "" : "not"} insured and visited ${this.citiesVisited[0]}.`;
+// 	}
+// };
+
+// // console.log(car.calcAge(2011));
+
+// console.log(car.calcYear());
+
+// // console.log(car.citiesVisited) same as console.log(car['citiesVisited'])
+// car.color = 'silver';
+
+// console.log(car)
+
+// console.log(car.getSummary());
+
+// challenge #3
+
+const mark = {
+	fullName: "Mark Miller",
+	weight: 78,
+	height: 1.69,
+
+	calcBMI: function(weight, height) {
+		this.BMI = this.weight / (this.height ** 2);
+		return this.BMI;
 	}
 };
 
-// console.log(car.calcAge(2011));
+const john = {
+	fullName: "John Smith",
+	weight: 92,
+	height: 1.95,
 
-console.log(car.calcYear());
+	calcBMI: function(weight, height) {
+		this.BMI = this.weight / (this.height ** 2);
+		return this.BMI;
+	}
+};
 
-// console.log(car.citiesVisited) same as console.log(car['citiesVisited'])
-car.color = 'silver';
+mark.calcBMI();
+john.calcBMI();
 
-console.log(car);
+console.log(mark.BMI, john.BMI);
 
-console.log(car.getSummary());
+if (mark.BMI > john.BMI) {
+	console.log(`${mark.fullName} has BMI of ${mark.BMI}, which is more than ${john.fullName}'s BMI of ${john.BMI}.`);
+} else if (john.BMI > mark.BMI) {
+	console.log(`${john.fullName} has BMI of ${john.BMI}, which is more than ${mark.fullName}'s BMI of ${mark.BMI}.`);
+} else {
+	console.log(`Both ${john.fullName} and ${mark.fullName} have the same BMI of ${mark.BMI}.`)
+}
+
 
 
