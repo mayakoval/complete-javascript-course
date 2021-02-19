@@ -195,21 +195,34 @@
 // console.log(ages);
 
 // // continue & break
-const years = [2019, 1894, 1990];
-const ages = [];
+// const years = [2019, 1894, 1990];
+// const ages = [];
 
-// accept only numbers in the years array
-for (let i = 0; i < years.length; i++) {
-	console.log(typeof years[i]);
-	if(typeof years[i] !== 'number') continue;
-	ages.push(2021 - years[i]);
-};
+// // accept only numbers in the years array
+// for (let i = 0; i < years.length; i++) {
+// 	console.log(typeof years[i]);
+// 	if(typeof years[i] !== 'number') continue;
+// 	ages.push(2021 - years[i]);
+// };
 
-// break if any of the array's elements are string
-for (let i = 0; i < years.length; i++) {
-	if(typeof years[i] === 'string') break;
-	ages.push(2021 - years[i]);
-};
+// // break if any of the array's elements are string
+// for (let i = 0; i < years.length; i++) {
+// 	if(typeof years[i] === 'string') break;
+// 	ages.push(2021 - years[i]);
+// };
 
-console.log(ages);
+// console.log(ages);
+
+// nested loop
+
+for (let ex = 1; ex < 3; ex++) {
+	console.log(`Starting exercise ${ex}`);
+
+	for (let rep = 5; rep >= 2; rep--) {
+		console.log(`Exercise rep ${rep}`);
+	}
+	console.log('Last rep, champ!')
+}
+
+
 
