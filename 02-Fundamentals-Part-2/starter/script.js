@@ -213,16 +213,21 @@
 
 // console.log(ages);
 
-// nested loop
+// // nested loop
 
-for (let ex = 1; ex < 3; ex++) {
-	console.log(`Starting exercise ${ex}`);
+// for (let ex = 1; ex < 3; ex++) {
+// 	console.log(`Starting exercise ${ex}`);
 
-	for (let rep = 5; rep >= 2; rep--) {
-		console.log(`Exercise rep ${rep}`);
-	}
-	console.log('Last rep, champ!')
+// 	for (let rep = 5; rep >= 2; rep--) {
+// 		console.log(`Exercise rep ${rep}`);
+// 	}
+// 	console.log('Last rep, champ!')
+// }
+
+// while loop doesn't need a counter
+let rep = 1;
+while (rep <= 5) {
+	console.log(`Exercise rep ${rep}`);
+	rep++;
 }
-
-
 
