@@ -111,7 +111,7 @@ const car = {
 	age: 10,
 	miles: 60000,
 	citiesVisited: ['Paris', 'Milan', 'London'],
-	isInsured: false,
+	isInsured: true,
 
 	// calcAge as car's property
 	// calcAge: function(birthYear) {
@@ -122,8 +122,14 @@ const car = {
 	calcYear: function() {
 		console.log(this);
 		return 2021 - this.age;
+	},
+
+	// summary
+	getSummary: function() {
+		return `This car is a ${this.make} model ${this.model} and is ${this.age} old. 
+		It is ${this.isInsured === true ? "" : "not"} insured and visited ${this.citiesVisited[0]}.`;
 	}
-}
+};
 
 // console.log(car.calcAge(2011));
 
@@ -132,5 +138,8 @@ console.log(car.calcYear());
 // console.log(car.citiesVisited) same as console.log(car['citiesVisited'])
 car.color = 'silver';
 
-console.log(car)
+console.log(car);
+
+console.log(car.getSummary());
+
 
