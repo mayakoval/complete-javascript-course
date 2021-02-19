@@ -224,10 +224,21 @@
 // 	console.log('Last rep, champ!')
 // }
 
-// while loop doesn't need a counter
-let rep = 1;
-while (rep <= 5) {
-	console.log(`Exercise rep ${rep}`);
-	rep++;
+// // while loop doesn't need a counter
+// let rep = 1;
+// while (rep <= 5) {
+// 	console.log(`Exercise rep ${rep}`);
+// 	rep++;
+// }
+
+// game
+// random number between 0 and 5, add 1 to make it 1-6
+let dice = Math.trunc(Math.random() * 6) + 1;
+// console.log(dice)
+
+while (dice !== 6) {
+	console.log(`You rolled a ${dice}`);
+	dice = Math.trunc(Math.random() * 6) + 1;
+	if (dice === 6) console.log('You rolled a 6, game end')
 }
 
