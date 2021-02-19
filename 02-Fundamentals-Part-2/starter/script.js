@@ -179,11 +179,37 @@
 // 	console.log(`Both ${john.fullName} and ${mark.fullName} have the same BMI of ${mark.BMI}.`)
 // }
 
-// loops
-// initialise rep with value 1, stop counter at 10, increment by 1 (like rep += 1)
-for(let rep = 1; rep <= 10; rep++) {
-	console.log(`Lifting weights rep ${rep}`);
-}
+// // loops
+// // initialise rep with value 1, stop counter at 10, increment by 1 (like rep += 1)
+// for(let rep = 1; rep <= 10; rep++) {
+// 	console.log(`Lifting weights rep ${rep}`);
+// }
 
+// const years = [2019, 1894, 1990];
+// const ages = [];
 
+// for (let i = 0; i < years.length; i++) {
+// 	ages.push(2021 - years[i]);
+// }
+
+// console.log(ages);
+
+// // continue & break
+const years = [2019, 1894, 1990];
+const ages = [];
+
+// accept only numbers in the years array
+for (let i = 0; i < years.length; i++) {
+	console.log(typeof years[i]);
+	if(typeof years[i] !== 'number') continue;
+	ages.push(2021 - years[i]);
+};
+
+// break if any of the array's elements are string
+for (let i = 0; i < years.length; i++) {
+	if(typeof years[i] === 'string') break;
+	ages.push(2021 - years[i]);
+};
+
+console.log(ages);
 
