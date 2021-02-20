@@ -231,14 +231,31 @@
 // 	rep++;
 // }
 
-// game
-// random number between 0 and 5, add 1 to make it 1-6
-let dice = Math.trunc(Math.random() * 6) + 1;
-// console.log(dice)
+// // game
+// // random number between 0 and 5, add 1 to make it 1-6
+// let dice = Math.trunc(Math.random() * 6) + 1;
+// // console.log(dice)
 
-while (dice !== 6) {
-	console.log(`You rolled a ${dice}`);
-	dice = Math.trunc(Math.random() * 6) + 1;
-	if (dice === 6) console.log('You rolled a 6, game end')
+// while (dice !== 6) {
+// 	console.log(`You rolled a ${dice}`);
+// 	dice = Math.trunc(Math.random() * 6) + 1;
+// 	if (dice === 6) console.log('You rolled a 6, game end')
+// }
+
+// challenge #4
+
+const bills = [250, 34, 67, 12, 394, 123, 24, 54, 87, 90, 100];
+const totals = [];
+const tips = [];
+
+const calcTip = function (bill) {
+	return bill >= 50 && bill <= 300 ? 0.15 * bill : 0.2 * bill;
 }
 
+for(let i = 0; i < bills.length; i++) {
+	const tip = calcTip(bills[i]);
+	tips.push(tip);
+	totals.push(tip + bills[i]);
+}
+
+console.log(tips, totals)
