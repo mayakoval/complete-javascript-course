@@ -244,7 +244,7 @@
 
 // challenge #4
 
-const bills = [250, 34, 67, 12, 394, 123, 24, 54, 87, 90, 100];
+const bills = [250, 100, 200];
 const totals = [];
 const tips = [];
 
@@ -259,3 +259,13 @@ for(let i = 0; i < bills.length; i++) {
 }
 
 console.log(tips, totals)
+
+const calcAverage = function (arr) {
+	let sum = 0;
+	for(let i = 0; i < arr.length; i++) {
+		sum += arr[i];
+	}
+	return sum / arr.length;
+}
+
+console.log(calcAverage(totals));
