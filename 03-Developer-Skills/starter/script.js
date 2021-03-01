@@ -2,3 +2,6 @@
 "use strict";
 
 let variable = "hello";
+let variable2 = "hi";
+
+console.log(variable);
