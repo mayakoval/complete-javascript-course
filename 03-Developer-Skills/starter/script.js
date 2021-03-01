@@ -85,11 +85,13 @@
 // challenge #1
 
 const printForecast = function (arr) {
+	let str = "";
 	for (let i = 0; i < arr.length; i++) {
 		const day = i + 1;
 		const temp = arr[i];
-		console.log(`... ${temp}oC in ${day} days`);
+		str += `${temp}oC in ${day} days ...`;
 	}
+	console.log("..." + str);
 };
 
-console.log(printForecast([4, 5, 6]));
+printForecast([4, 5, 6]);
