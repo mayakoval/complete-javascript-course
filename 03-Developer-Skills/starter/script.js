@@ -65,19 +65,31 @@
 
 // console.log(calcAmplitudeNew(temperatures1, temperatures2));
 
-// debugging
+// // debugging
 
-const measureKelvins = function () {
-	const measurement = {
-		type: "temp",
-		unit: "celsius",
-		value: prompt("Enter degrees in Celsius: "),
-	};
+// const measureKelvins = function () {
+// 	const measurement = {
+// 		type: "temp",
+// 		unit: "celsius",
+// 		value: prompt("Enter degrees in Celsius: "),
+// 	};
 
-	console.table(measurement);
+// 	console.table(measurement);
 
-	const kelvins = Number(measurement.value) + 273;
-	return kelvins;
+// 	const kelvins = Number(measurement.value) + 273;
+// 	return kelvins;
+// };
+
+// console.log(measureKelvins());
+
+// challenge #1
+
+const printForecast = function (arr) {
+	for (let i = 0; i < arr.length; i++) {
+		const day = i + 1;
+		const temp = arr[i];
+		console.log(`... ${temp}oC in ${day} days`);
+	}
 };
 
-console.log(measureKelvins());
+console.log(printForecast([4, 5, 6]));
