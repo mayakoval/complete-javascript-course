@@ -44,23 +44,40 @@
 
 // merging arrays
 
-const temperatures1 = [3, -2, -6, 1, "error", 9, 12, 16];
-const temperatures2 = [23, 12, 5, "error", -1];
+// const temperatures1 = [3, -2, -6, 1, "error", 9, 12, 16];
+// const temperatures2 = [23, 12, 5, "error", -1];
 
-const calcAmplitudeNew = function (arr1, arr2) {
-	const merged = arr1.concat(arr2);
-	let temperatures = [];
-	for (let i = 0; i < merged.length; i++) {
-		const temperature = merged[i];
-		if (typeof temperature !== "number") continue;
+// const calcAmplitudeNew = function (arr1, arr2) {
+// 	const merged = arr1.concat(arr2);
+// 	let temperatures = [];
+// 	for (let i = 0; i < merged.length; i++) {
+// 		const temperature = merged[i];
+// 		if (typeof temperature !== "number") continue;
 
-		temperatures.push(temperature);
-	}
+// 		temperatures.push(temperature);
+// 	}
 
-	const max = Math.max(...temperatures);
-	const min = Math.min(...temperatures);
+// 	const max = Math.max(...temperatures);
+// 	const min = Math.min(...temperatures);
 
-	return max - min;
+// 	return max - min;
+// };
+
+// console.log(calcAmplitudeNew(temperatures1, temperatures2));
+
+// debugging
+
+const measureKelvins = function () {
+	const measurement = {
+		type: "temp",
+		unit: "celsius",
+		value: prompt("Enter degrees in Celsius: "),
+	};
+
+	console.table(measurement);
+
+	const kelvins = Number(measurement.value) + 273;
+	return kelvins;
 };
 
-console.log(calcAmplitudeNew(temperatures1, temperatures2));
+console.log(measureKelvins());
