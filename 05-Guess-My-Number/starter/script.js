@@ -28,9 +28,15 @@ document.querySelector('.check').addEventListener('click', function () {
 	} else if (guess > 20 || guess < 1) {
 		document.querySelector('.message').textContent =
 			'Number has to be between 1 to 20!';
+
+		// win
 	} else if (guess === randomNumber) {
 		document.querySelector('.message').textContent = 'Correct anwser!';
 		document.querySelector('.number').textContent = randomNumber;
+		document.querySelector('body').style.backgroundColor = '#60b347';
+		document.querySelector('.number').style.width = '30rem';
+
+		// too high
 	} else if (guess > randomNumber) {
 		// guard clause
 		if (score > 1) {
@@ -41,6 +47,8 @@ document.querySelector('.check').addEventListener('click', function () {
 			document.querySelector('.message').textContent = 'Game over';
 			document.querySelector('.score').textContent = 0;
 		}
+
+		// too low
 	} else if (guess < randomNumber) {
 		// guard clause
 		if (score > 1) {
