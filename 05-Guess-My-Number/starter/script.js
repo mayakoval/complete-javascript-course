@@ -13,7 +13,7 @@
 // game logic
 
 // random number generator, adds 1 to include 20 as the last possibility
-const randomNumber = Math.trunc(Math.random() * 20) + 1;
+let randomNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 
 document.querySelector('.score').textContent = score;
@@ -60,4 +60,19 @@ document.querySelector('.check').addEventListener('click', function () {
 			document.querySelector('.score').textContent = 0;
 		}
 	}
+});
+
+document.querySelector('.again').addEventListener('click', function () {
+	score = 20;
+	// re-assign the random value
+	randomNumber = Math.trunc(Math.random() * 20) + 1;
+	document.querySelector('.message').textContent = 'Start guessing...';
+
+	document.querySelector('.score').textContent = score;
+	document.querySelector('.number').textContent = '?';
+	// empty guess box
+	document.querySelector('.guess').value = '';
+	// change CSS otherwise will remain green when guess is correct
+	document.querySelector('body').style.backgroundColor = '#222';
+	document.querySelector('.number').style.width = '15rem';
 });
