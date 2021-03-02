@@ -20,11 +20,18 @@ console.log(randomNumber);
 
 document.querySelector('.check').addEventListener('click', function () {
 	const guess = Number(document.querySelector('.guess').value);
-	console.log(guess, typeof guess);
+	// console.log(guess, typeof guess);
 
 	if (!guess) {
 		document.querySelector('.message').textContent = 'No number chosen';
+	} else if (guess > 20 || guess < 1) {
+		document.querySelector('.message').textContent =
+			'Number has to be between 1 to 20!';
 	} else if (guess === randomNumber) {
 		document.querySelector('.message').textContent = 'Correct anwser!';
+	} else if (guess > randomNumber) {
+		document.querySelector('.message').textContent = 'Too high, try again';
+	} else if (guess < randomNumber) {
+		document.querySelector('.message').textContent = 'Too low, try again';
 	}
 });
