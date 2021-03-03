@@ -19,5 +19,6 @@ for (let i = 0; i < btnsShowModal.length; i++)
 	btnsShowModal[i].addEventListener('click', showModal);
 
 // closeModal doesn't require empty brackets
+// adding brackets would trigger the function without clicking
 btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
