@@ -7,15 +7,17 @@ function calcAge(birthYear) {
 
 	function printAge() {
 		// access to firstName is gained as global is a parent to local scope
-		const output = `${firstName}, you are ${age} years old as you were born in ${birthYear}`;
+		let output = `${firstName}, you are ${age} years old as you were born in ${birthYear}`;
 		console.log(output);
 
 		// still has birthYear within its scope
 		if (birthYear >= 1981 && birthYear <= 1996) {
 			// will extend the scope beyond this block
 			var millenial = true;
-			// millenial message will use this variable as it's closer in the scope chain
+			// millenial message will use this new variable as it's closer in the scope chain
 			const firstName = 'Steven';
+			// re-assigning an existing variable inside child scope
+			output = 'NEW OUTPUT';
 			const message = `Looks like you're a millenial, ${firstName}`;
 			console.log(message);
 
@@ -28,6 +30,7 @@ function calcAge(birthYear) {
 
 		// message will be printed as millenial is FUNCTION-scoped
 		console.log(millenial);
+		console.log(output);
 		// will not return the sum if strict mode is on
 		// as it is block-scoped
 		// add(2, 3);
