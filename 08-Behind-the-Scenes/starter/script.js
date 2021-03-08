@@ -6,7 +6,8 @@ function calcAge(birthYear) {
 	const age = 2021 - birthYear;
 
 	function printAge() {
-		const output = `You are ${age} years old as you were born in ${birthYear}`;
+		// access to firstName is gained as global is a parent to local scope
+		const output = `${firstName}, you are ${age} years old as you were born in ${birthYear}`;
 		console.log(output);
 	}
 
@@ -22,5 +23,5 @@ calcAge(1985);
 
 // error: printAge not defined
 // no access from global scope
-console.log(age);
-printAge();
+// console.log(age);
+// printAge();
