@@ -14,6 +14,8 @@ function calcAge(birthYear) {
 		if (birthYear >= 1981 && birthYear <= 1996) {
 			// will extend the scope beyond this block
 			var millenial = true;
+			// millenial message will use this variable as it's closer in the scope chain
+			const firstName = 'Steven';
 			const message = `Looks like you're a millenial, ${firstName}`;
 			console.log(message);
 
@@ -28,7 +30,7 @@ function calcAge(birthYear) {
 		console.log(millenial);
 		// will not return the sum if strict mode is on
 		// as it is block-scoped
-		add(2, 3);
+		// add(2, 3);
 	}
 
 	// successful access to printAge and age
