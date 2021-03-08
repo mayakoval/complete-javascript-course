@@ -51,13 +51,36 @@
 // // console.log(age);
 // // printAge();
 
-console.log(me);
+// console.log(me);
 
-// returns undefined
-var me = 'Maya';
-let job = 'Developer';
-// job and year are in a dead zone before being initialized
-console.log(job);
+// // returns undefined
+// var me = 'Maya';
+// let job = 'Developer';
+// // job and year are in a dead zone before being initialized
+// console.log(job);
 
-const year = 2021;
-console.log(year);
+// const year = 2021;
+// console.log(year);
+
+// functions
+
+// function declaration can be called before it's defined
+console.log(addDecl(2, 3));
+
+function addDecl(a, b) {
+	return a + b;
+}
+
+const addExpr = function (a, b) {
+	return a + b;
+};
+
+// function lives in the DZ and should be called after addExpr is declared
+console.log(addExpr(2, 3));
+
+// if it was a var addArrow it would have to be called
+// AFTER declaration, otherwise will return undefined
+const addArrow = (a, b) => a + b;
+
+// same as with addExpr (if a const/let)
+console.log(addArrow(2, 3));
