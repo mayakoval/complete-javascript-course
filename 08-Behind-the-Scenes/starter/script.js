@@ -16,12 +16,19 @@ function calcAge(birthYear) {
 			var millenial = true;
 			const message = `Looks like you're a millenial, ${firstName}`;
 			console.log(message);
+
+			function add(a, b) {
+				return a + b;
+			}
 		}
 		// message will not be accessed outside of block scope
 		// console.log(message);
 
 		// message will be printed as millenial is FUNCTION-scoped
 		console.log(millenial);
+		// will not return the sum if strict mode is on
+		// as it is block-scoped
+		add(2, 3);
 	}
 
 	// successful access to printAge and age
