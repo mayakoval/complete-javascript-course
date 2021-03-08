@@ -62,25 +62,36 @@
 // const year = 2021;
 // console.log(year);
 
-// functions
+// // functions
 
-// function declaration can be called before it's defined
-console.log(addDecl(2, 3));
+// // function declaration can be called before it's defined
+// console.log(addDecl(2, 3));
 
-function addDecl(a, b) {
-	return a + b;
-}
+// function addDecl(a, b) {
+// 	return a + b;
+// }
 
-const addExpr = function (a, b) {
-	return a + b;
-};
+// const addExpr = function (a, b) {
+// 	return a + b;
+// };
 
-// function lives in the DZ and should be called after addExpr is declared
-console.log(addExpr(2, 3));
+// // function lives in the DZ and should be called after addExpr is declared
+// console.log(addExpr(2, 3));
 
-// if it was a var addArrow it would have to be called
-// AFTER declaration, otherwise will return undefined
-const addArrow = (a, b) => a + b;
+// // if it was a var addArrow it would have to be called
+// // AFTER declaration, otherwise will return undefined
+// const addArrow = (a, b) => a + b;
 
-// same as with addExpr (if a const/let)
-console.log(addArrow(2, 3));
+// // same as with addExpr (if a const/let)
+// console.log(addArrow(2, 3));
+
+var x = 1;
+let y = 2;
+const z = 3;
+
+// true - only var is a global window object
+console.log(x === window.x);
+// false
+console.log(y === window.y);
+// false
+console.log(z === window.z);
