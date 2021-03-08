@@ -12,11 +12,16 @@ function calcAge(birthYear) {
 
 		// still has birthYear within its scope
 		if (birthYear >= 1981 && birthYear <= 1996) {
+			// will extend the scope beyond this block
+			var millenial = true;
 			const message = `Looks like you're a millenial, ${firstName}`;
 			console.log(message);
 		}
 		// message will not be accessed outside of block scope
-		console.log(message);
+		// console.log(message);
+
+		// message will be printed as millenial is FUNCTION-scoped
+		console.log(millenial);
 	}
 
 	// successful access to printAge and age
