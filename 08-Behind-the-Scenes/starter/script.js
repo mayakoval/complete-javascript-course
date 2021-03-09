@@ -195,6 +195,7 @@
 
 // primitive values vs objects
 
+// Primitive values
 let lastName = 'Williams';
 let previousLastName = lastName;
 lastName = 'Davis';
@@ -203,6 +204,7 @@ lastName = 'Davis';
 // call stack with separate references
 console.log(lastName, previousLastName);
 
+// Reference types
 const jess = {
 	firstName: 'Jess',
 	lastName: 'Williams',
@@ -217,4 +219,19 @@ console.log(marriedJess);
 console.log(jess);
 // as per line 212 both belong to the same value in the stack
 // which holds the same reference to both jess & marriedJess
-// when lastName gets reassigned in heap stack and affects both
+// when lastName gets reassigned in heap stack and affects both properties
+
+// Copying objects
+const kate = {
+	firstName: 'Kate',
+	lastName: 'Doe',
+	age: 30,
+};
+
+// create a new object with the same properties as kate - shallow copy
+// similarly to Ruby's duplication
+// e.g. array would be too nested to be a separate property for both kate and kateCopy
+const kateCopy = Object.assign({}, kate);
+kateCopy.lastName = 'Foe';
+// kateCopy has a new reference in stack and will have diff lastName
+console.log(kate, kateCopy);
