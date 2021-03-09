@@ -123,8 +123,10 @@ const method = {
 	year: 2014,
 	calcAge: function () {
 		// will call method.year as it's the closest object
+		// belonging to the object calling the method
 		console.log(this);
 	},
 };
 
+// method is an object calling calcAge function
 method.calcAge();
