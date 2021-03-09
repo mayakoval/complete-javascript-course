@@ -96,16 +96,25 @@
 // // false
 // console.log(z === window.z);
 
-// this keyword
+// // this keyword
 
-// window object
-console.log(this);
+// // window object
+// console.log(this);
 
-const calcAge = function (birthYear) {
-	// will return the result
+// const calcAge = function (birthYear) {
+// 	// will return the result
+// 	console.log(2021 - birthYear);
+// 	// undefined
+// 	console.log(this);
+// };
+
+// calcAge(1934);
+
+const calcAgeArrow = birthYear => {
+	// returns the result
 	console.log(2021 - birthYear);
-	// undefined
+	// widow object
 	console.log(this);
 };
 
-calcAge(1934);
+calcAgeArrow(1953);
