@@ -173,22 +173,48 @@
 // method.showMethod();
 // method.calcAge();
 
-// arguments keyword
+// // arguments keyword
 
-const addExpr = function (a, b) {
-	console.log(arguments);
-	return a + b;
+// const addExpr = function (a, b) {
+// 	console.log(arguments);
+// 	return a + b;
+// };
+
+// addExpr(4, 2);
+// // can be more than the amount of parameters in the function expression
+// addExpr(4, 2, 5, 6);
+
+// var addArrow = (a, b) => {
+// 	console.log(arguments);
+// 	return a + b;
+// };
+
+// // will cause ReferenceError: arguments not defined
+// // as arguments doesn't exist in arrow functions
+// addArrow(2, 4);
+
+// primitive values vs objects
+
+let lastName = 'Williams';
+let previousLastName = lastName;
+lastName = 'Davis';
+// lastName will be changes to Davis, previousLastName
+// will stay as Williams as both primitives live in the
+// call stack with separate references
+console.log(lastName, previousLastName);
+
+const jess = {
+	firstName: 'Jess',
+	lastName: 'Williams',
+	age: 27,
 };
 
-addExpr(4, 2);
-// can be more than the amount of parameters in the function expression
-addExpr(4, 2, 5, 6);
-
-var addArrow = (a, b) => {
-	console.log(arguments);
-	return a + b;
-};
-
-// will cause ReferenceError: arguments not defined
-// as arguments doesn't exist in arrow functions
-addArrow(2, 4);
+const marriedJess = jess;
+marriedJess.lastName = 'Davis';
+// marriedJess will change lastName
+console.log(marriedJess);
+// but so will jess object
+console.log(jess);
+// as per line 212 both belong to the same value in the stack
+// which holds the same reference to both jess & marriedJess
+// when lastName gets reassigned in heap stack and affects both
