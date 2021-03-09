@@ -85,13 +85,27 @@
 // // same as with addExpr (if a const/let)
 // console.log(addArrow(2, 3));
 
-var x = 1;
-let y = 2;
-const z = 3;
+// var x = 1;
+// let y = 2;
+// const z = 3;
 
-// true - only var is a global window object
-console.log(x === window.x);
-// false
-console.log(y === window.y);
-// false
-console.log(z === window.z);
+// // true - only var is a global window object
+// console.log(x === window.x);
+// // false
+// console.log(y === window.y);
+// // false
+// console.log(z === window.z);
+
+// this keyword
+
+// window object
+console.log(this);
+
+const calcAge = function (birthYear) {
+	// will return the result
+	console.log(2021 - birthYear);
+	// undefined
+	console.log(this);
+};
+
+calcAge(1934);
