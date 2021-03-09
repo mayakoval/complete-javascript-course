@@ -131,44 +131,64 @@
 // // method is an object calling calcAge function
 // method.calcAge();
 
-// regular vs. arrow functions
+// // regular vs. arrow functions
 
-const method = {
-	methodName: 'test',
-	year: 2014,
-	calcAge: function () {
-		console.log(this);
-		console.log(2053 - this.year);
+// const method = {
+// 	methodName: 'test',
+// 	year: 2014,
+// 	calcAge: function () {
+// 		console.log(this);
+// 		console.log(2053 - this.year);
 
-		// way around not being able to use this in isMillenial
-		// Solution 1
-		// is to set self of 'this' value
-		// const self = this; // self or that
+// 		// way around not being able to use this in isMillenial
+// 		// Solution 1
+// 		// is to set self of 'this' value
+// 		// const self = this; // self or that
 
-		// const isMillenial = function () {
-		// would not work as this is undefined
-		// this for every regular function call will be undefined
-		// console.log(this.year >= 1981 && this.year <= 1996);
-		// instead:
-		// console.log(self.year >= 1981 && self.year <= 1996);
-		// };
+// 		// const isMillenial = function () {
+// 		// would not work as this is undefined
+// 		// this for every regular function call will be undefined
+// 		// console.log(this.year >= 1981 && this.year <= 1996);
+// 		// instead:
+// 		// console.log(self.year >= 1981 && self.year <= 1996);
+// 		// };
 
-		// Solution 2
-		// is to set isMillenial as an arrow function
-		// as it doesn't have this - it will inherit it from method
-		const isMillenial = () => {
-			// shows method object
-			console.log(this);
-			console.log(this.year >= 1981 && this.year <= 1996);
-		};
-		isMillenial();
-	},
+// 		// Solution 2
+// 		// is to set isMillenial as an arrow function
+// 		// as it doesn't have this - it will inherit it from method
+// 		const isMillenial = () => {
+// 			// shows method object
+// 			console.log(this);
+// 			console.log(this.year >= 1981 && this.year <= 1996);
+// 		};
+// 		isMillenial();
+// 	},
 
-	// this.methodName will return undefined as the parent scope === global
-	// window object has no methodName (could be created with var)
-	// reason for NOT using arrow function as your method
-	showMethod: () => console.log(`The method is ${this.methodName}`),
+// 	// this.methodName will return undefined as the parent scope === global
+// 	// window object has no methodName (could be created with var)
+// 	// reason for NOT using arrow function as your method
+// 	showMethod: () => console.log(`The method is ${this.methodName}`),
+// };
+
+// method.showMethod();
+// method.calcAge();
+
+// arguments keyword
+
+const addExpr = function (a, b) {
+	console.log(arguments);
+	return a + b;
 };
 
-method.showMethod();
-method.calcAge();
+addExpr(4, 2);
+// can be more than the amount of parameters in the function expression
+addExpr(4, 2, 5, 6);
+
+var addArrow = (a, b) => {
+	console.log(arguments);
+	return a + b;
+};
+
+// will cause ReferenceError: arguments not defined
+// as arguments doesn't exist in arrow functions
+addArrow(2, 4);
