@@ -110,11 +110,21 @@
 
 // calcAge(1934);
 
-const calcAgeArrow = birthYear => {
-	// returns the result
-	console.log(2021 - birthYear);
-	// widow object
-	console.log(this);
+// const calcAgeArrow = birthYear => {
+// 	// returns the result
+// 	console.log(2021 - birthYear);
+// 	// widow object:
+// 	console.log(this); // this keyword doesn't belong to arrow function
+// };
+
+// calcAgeArrow(1953);
+
+const method = {
+	year: 2014,
+	calcAge: function () {
+		// will call method.year as it's the closest object
+		console.log(this);
+	},
 };
 
-calcAgeArrow(1953);
+method.calcAge();
