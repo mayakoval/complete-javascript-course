@@ -119,14 +119,47 @@
 
 // calcAgeArrow(1953);
 
+// const method = {
+// 	year: 2014,
+// 	calcAge: function () {
+// 		// will call method.year as it's the closest object
+// 		// belonging to the object calling the method
+// 		console.log(this);
+// 	},
+// };
+
+// // method is an object calling calcAge function
+// method.calcAge();
+
+// regular vs. arrow functions
+
 const method = {
+	methodName: 'test',
 	year: 2014,
 	calcAge: function () {
-		// will call method.year as it's the closest object
-		// belonging to the object calling the method
 		console.log(this);
+		console.log(2053 - this.year);
+
+		// way around not being able to use this in isMillenial
+		// Solution 1
+		// is to set self of 'this' value
+		const self = this; // self or that
+
+		const isMillenial = function () {
+			// would not work as this is undefined
+			// this for every regular function call will be undefined
+			// console.log(this.year >= 1981 && this.year <= 1996);
+			// instead:
+			console.log(self.year >= 1981 && self.year <= 1996);
+		};
+		isMillenial();
 	},
+
+	// this.methodName will return undefined as the parent scope === global
+	// window object has no methodName (could be created with var)
+	// reason for NOT using arrow function as your method
+	showMethod: () => console.log(`The method is ${this.methodName}`),
 };
 
-// method is an object calling calcAge function
+method.showMethod();
 method.calcAge();
