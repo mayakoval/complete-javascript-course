@@ -143,14 +143,23 @@ const method = {
 		// way around not being able to use this in isMillenial
 		// Solution 1
 		// is to set self of 'this' value
-		const self = this; // self or that
+		// const self = this; // self or that
 
-		const isMillenial = function () {
-			// would not work as this is undefined
-			// this for every regular function call will be undefined
-			// console.log(this.year >= 1981 && this.year <= 1996);
-			// instead:
-			console.log(self.year >= 1981 && self.year <= 1996);
+		// const isMillenial = function () {
+		// would not work as this is undefined
+		// this for every regular function call will be undefined
+		// console.log(this.year >= 1981 && this.year <= 1996);
+		// instead:
+		// console.log(self.year >= 1981 && self.year <= 1996);
+		// };
+
+		// Solution 2
+		// is to set isMillenial as an arrow function
+		// as it doesn't have this - it will inherit it from method
+		const isMillenial = () => {
+			// shows method object
+			console.log(this);
+			console.log(this.year >= 1981 && this.year <= 1996);
 		};
 		isMillenial();
 	},
