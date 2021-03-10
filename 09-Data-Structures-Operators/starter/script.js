@@ -57,3 +57,12 @@ console.log(restaurant.order(2, 0));
 // deconstruct the order
 const [starter, main] = restaurant.order(2, 0);
 console.log(starter + ', ' + main);
+
+// nested array
+const nestedArr = [2, [3, 5]];
+// deconstruct
+const [i, j] = nestedArr;
+console.log(i, j);
+// unpack the i & j element (nested array)
+const [a, [b, c]] = nestedArr;
+console.log(a, b, c);
