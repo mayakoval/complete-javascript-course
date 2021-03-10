@@ -32,3 +32,19 @@ const arr = [2, 3, 4];
 // array destructuring assignment
 const [x, y, z] = arr;
 console.log(x, y, z);
+
+// skip the second category
+let [first, , third] = restaurant.categories;
+console.log(first, third);
+
+// switching variables
+// swap places for the first and third entry
+// needs a temporary variable temp
+// const temp = first;
+// first = third;
+// third = temp;
+// console.log(first, third);
+
+// quicker way to change order
+[first, , third] = [third, , first];
+console.log(first, third);
