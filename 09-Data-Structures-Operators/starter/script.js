@@ -26,6 +26,10 @@ const restaurant = {
       close: 24,
     },
   },
+
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
 };
 
 const arr = [2, 3, 4];
@@ -48,3 +52,8 @@ console.log(first, third);
 // quicker way to change order
 [first, , third] = [third, , first];
 console.log(first, third);
+
+console.log(restaurant.order(2, 0));
+// deconstruct the order
+const [starter, main] = restaurant.order(2, 0);
+console.log(starter + ', ' + main);
