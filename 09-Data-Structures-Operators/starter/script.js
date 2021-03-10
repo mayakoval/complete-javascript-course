@@ -66,3 +66,8 @@ console.log(i, j);
 // unpack the i & j element (nested array)
 const [a, [b, c]] = nestedArr;
 console.log(a, b, c);
+
+// setting default values
+// r = 1 as a default value
+const [p, q = 1, r = 1] = [5, 6];
+console.log(p, q, r);
