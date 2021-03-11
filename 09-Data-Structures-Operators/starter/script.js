@@ -50,6 +50,12 @@ console.log(
   categories === tags
 );
 
+// set default values
+// menu doesn't pre-exist as a property so will return []
+// starters does under starterMenu and will display its elements
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
 // const arr = [2, 3, 4];
 // // array destructuring assignment
 // const [x, y, z] = arr;
