@@ -67,6 +67,15 @@ const obj = { a: 23, b: 7, c: 13 };
 ({ a, b } = obj);
 console.log(a, b);
 
+// destructuring nested objects
+const { fri } = openingHours;
+console.log(fri);
+
+const {
+  fri: { open: start, close: end }, // reassign properties' names
+} = openingHours;
+console.log(start, end);
+
 // const arr = [2, 3, 4];
 // // array destructuring assignment
 // const [x, y, z] = arr;
