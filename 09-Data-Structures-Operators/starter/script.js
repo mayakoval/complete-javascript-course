@@ -44,6 +44,7 @@ const {
   categories: tags,
 } = restaurant;
 console.log(restaurantName, hours, tags);
+// 3x true
 console.log(
   name === restaurantName,
   openingHours === hours,
@@ -55,6 +56,16 @@ console.log(
 // starters does under starterMenu and will display its elements
 const { menu = [], starterMenu: starters = [] } = restaurant;
 console.log(menu, starters);
+
+// mutating variables on objects
+let a = 111;
+let b = 222;
+const obj = { a: 23, b: 7, c: 13 };
+
+// wrapping the object in parentheses
+// reassigning a and b values
+({ a, b } = obj);
+console.log(a, b);
 
 // const arr = [2, 3, 4];
 // // array destructuring assignment
