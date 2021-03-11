@@ -30,7 +30,23 @@ const restaurant = {
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
+
+  // method for destructuring object
+  // one object makes multiple arguments
+  orderDelivery: function ({ starterIndex, mainIndex, time, address }) {
+    console.log(
+      `Order for received! \n Starter: ${this.starterMenu[starterIndex]}, \n Main: ${this.mainMenu[mainIndex]} \n to be delivered to ${address} for ${time}`
+    );
+  },
 };
+
+// one object = one argument
+restaurant.orderDelivery({
+  time: '22:00',
+  address: '12 High St',
+  mainIndex: 2,
+  starterIndex: 2,
+});
 
 // destructuring objects
 // the order of the properties doesn't matter in an object
