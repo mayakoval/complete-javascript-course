@@ -34,9 +34,14 @@ const restaurant = {
   // method for destructuring object
   // one object makes multiple arguments
   orderDelivery: function ({ starterIndex, mainIndex, time, address }) {
-    console.log(
-      `Order for received! \n Starter: ${this.starterMenu[starterIndex]}, \n Main: ${this.mainMenu[mainIndex]} \n to be delivered to ${address} for ${time}`
-    );
+    // setting default values
+    (starterIndex = 1),
+      (mainIndex = 0),
+      (time = '20:00'),
+      address,
+      console.log(
+        `Order for received! \n Starter: ${this.starterMenu[starterIndex]}, \n Main: ${this.mainMenu[mainIndex]} \n to be delivered to ${address} for ${time}`
+      );
   },
 };
 
