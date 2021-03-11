@@ -32,42 +32,60 @@ const restaurant = {
   },
 };
 
-const arr = [2, 3, 4];
-// array destructuring assignment
-const [x, y, z] = arr;
-console.log(x, y, z);
+// destructuring objects
+// the order of the properties doesn't matter in an object
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
 
-// skip the second category
-let [first, , third] = restaurant.categories;
-console.log(first, third);
+// reassing properties' names
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
+console.log(
+  name === restaurantName,
+  openingHours === hours,
+  categories === tags
+);
 
-// switching variables
-// swap places for the first and third entry
-// needs a temporary variable temp
-// const temp = first;
-// first = third;
-// third = temp;
+// const arr = [2, 3, 4];
+// // array destructuring assignment
+// const [x, y, z] = arr;
+// console.log(x, y, z);
+
+// // skip the second category
+// let [first, , third] = restaurant.categories;
 // console.log(first, third);
 
-// quicker way to change order
-[first, , third] = [third, , first];
-console.log(first, third);
+// // switching variables
+// // swap places for the first and third entry
+// // needs a temporary variable temp
+// // const temp = first;
+// // first = third;
+// // third = temp;
+// // console.log(first, third);
 
-console.log(restaurant.order(2, 0));
-// deconstruct the order
-const [starter, main] = restaurant.order(2, 0);
-console.log(starter + ', ' + main);
+// // quicker way to change order
+// [first, , third] = [third, , first];
+// console.log(first, third);
 
-// nested array
-const nestedArr = [2, [3, 5]];
-// deconstruct
-const [i, j] = nestedArr;
-console.log(i, j);
-// unpack the i & j element (nested array)
-const [a, [b, c]] = nestedArr;
-console.log(a, b, c);
+// console.log(restaurant.order(2, 0));
+// // deconstruct the order
+// const [starter, main] = restaurant.order(2, 0);
+// console.log(starter + ', ' + main);
 
-// setting default values
-// r = 1 as a default value
-const [p, q = 1, r = 1] = [5, 6];
-console.log(p, q, r);
+// // nested array
+// const nestedArr = [2, [3, 5]];
+// // deconstruct
+// const [i, j] = nestedArr;
+// console.log(i, j);
+// // unpack the i & j element (nested array)
+// const [a, [b, c]] = nestedArr;
+// console.log(a, b, c);
+
+// // setting default values
+// // r = 1 as a default value
+// const [p, q = 1, r = 1] = [5, 6];
+// console.log(p, q, r);
