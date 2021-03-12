@@ -45,57 +45,69 @@ const restaurant = {
   },
 };
 
-// one object = one argument
-restaurant.orderDelivery({
-  time: '22:00',
-  address: '12 High St',
-  mainIndex: 2,
-  starterIndex: 2,
-});
+// spread operator
+const arr = [6, 4, 2];
+const badArr = [1, 2, arr[0], arr[1], arr[2]];
+const goodArr = [1, 2, ...arr];
+console.log(badArr, goodArr); // same array
+// spread operator takes all the elements from goodArr
+// but does NOT create new variables, unlike destructuring
+console.log(...goodArr);
 
-// destructuring objects
-// the order of the properties doesn't matter in an object
-const { name, openingHours, categories } = restaurant;
-console.log(name, openingHours, categories);
+const newMenu = [...restaurant.mainMenu, 'Spaghetti'];
+console.log(newMenu);
 
-// reassing properties' names
-const {
-  name: restaurantName,
-  openingHours: hours,
-  categories: tags,
-} = restaurant;
-console.log(restaurantName, hours, tags);
-// 3x true
-console.log(
-  name === restaurantName,
-  openingHours === hours,
-  categories === tags
-);
+// // one object = one argument
+// restaurant.orderDelivery({
+//   time: '22:00',
+//   address: '12 High St',
+//   mainIndex: 2,
+//   starterIndex: 2,
+// });
 
-// set default values
-// menu doesn't pre-exist as a property so will return []
-// starters does under starterMenu and will display its elements
-const { menu = [], starterMenu: starters = [] } = restaurant;
-console.log(menu, starters);
+// // destructuring objects
+// // the order of the properties doesn't matter in an object
+// const { name, openingHours, categories } = restaurant;
+// console.log(name, openingHours, categories);
 
-// mutating variables on objects
-let a = 111;
-let b = 222;
-const obj = { a: 23, b: 7, c: 13 };
+// // reassing properties' names
+// const {
+//   name: restaurantName,
+//   openingHours: hours,
+//   categories: tags,
+// } = restaurant;
+// console.log(restaurantName, hours, tags);
+// // 3x true
+// console.log(
+//   name === restaurantName,
+//   openingHours === hours,
+//   categories === tags
+// );
 
-// wrapping the object in parentheses
-// reassigning a and b values
-({ a, b } = obj);
-console.log(a, b);
+// // set default values
+// // menu doesn't pre-exist as a property so will return []
+// // starters does under starterMenu and will display its elements
+// const { menu = [], starterMenu: starters = [] } = restaurant;
+// console.log(menu, starters);
 
-// destructuring nested objects
-const { fri } = openingHours;
-console.log(fri);
+// // mutating variables on objects
+// let a = 111;
+// let b = 222;
+// const obj = { a: 23, b: 7, c: 13 };
 
-const {
-  fri: { open: start, close: end }, // reassign properties' names
-} = openingHours;
-console.log(start, end);
+// // wrapping the object in parentheses
+// // reassigning a and b values
+// ({ a, b } = obj);
+// console.log(a, b);
+
+// // destructuring nested objects
+// const { fri } = openingHours;
+// console.log(fri);
+
+// const {
+//   fri: { open: start, close: end }, // reassign properties' names
+// } = openingHours;
+// console.log(start, end);
 
 // const arr = [2, 3, 4];
 // // array destructuring assignment
