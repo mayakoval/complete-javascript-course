@@ -43,7 +43,20 @@ const restaurant = {
         `Order for received! \n Starter: ${this.starterMenu[starterIndex]}, \n Main: ${this.mainMenu[mainIndex]} \n to be delivered to ${address} for ${time}`
       );
   },
+
+  orderPizza: function (dough, sauce, topping) {
+    console.log(
+      `Your pizza is on ${dough} dough with ${sauce} sauce and ${topping} on top. Yummy!`
+    );
+  },
 };
+
+const ingredients = [
+  prompt('What dough for your pizza?: '),
+  prompt('What sauce on your pizza?: '),
+  prompt('What toppings would you like?: '),
+];
+restaurant.orderPizza(...ingredients);
 
 // spread operator
 const arr = [6, 4, 2];
@@ -67,6 +80,7 @@ console.log(fullMenu);
 
 // works on strings too
 const str = 'Maya';
+// would NOT work in string interpolation
 const letters = [...str];
 console.log(letters);
 
