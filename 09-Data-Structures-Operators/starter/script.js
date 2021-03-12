@@ -65,6 +65,11 @@ console.log(mainMenuCopy);
 const fullMenu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 console.log(fullMenu);
 
+// works on strings too
+const str = 'Maya';
+const letters = [...str];
+console.log(letters);
+
 // // one object = one argument
 // restaurant.orderDelivery({
 //   time: '22:00',
