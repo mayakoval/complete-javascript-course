@@ -58,6 +58,14 @@ const ingredients = [
 ];
 restaurant.orderPizza(...ingredients);
 
+// objects
+const newRestaurant = { ...restaurant, founder: 'Roberto' };
+console.log(newRestaurant);
+
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Mamma Mia';
+console.log(restaurant.name === restaurantCopy.name); // false
+
 // spread operator
 const arr = [6, 4, 2];
 const badArr = [1, 2, arr[0], arr[1], arr[2]];
