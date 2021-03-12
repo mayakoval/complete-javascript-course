@@ -57,6 +57,14 @@ console.log(...goodArr);
 const newMenu = [...restaurant.mainMenu, 'Spaghetti'];
 console.log(newMenu);
 
+// create a shallow copy of the mainMenu
+const mainMenuCopy = [...restaurant.mainMenu];
+console.log(mainMenuCopy);
+
+// merge arrays
+const fullMenu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(fullMenu);
+
 // // one object = one argument
 // restaurant.orderDelivery({
 //   time: '22:00',
