@@ -54,6 +54,7 @@ const restaurant = {
 // rest pattern
 // looks like spread operator, does the opposite
 
+// 1) DESTRUCTURING
 // spread operator on the right
 const arr = [1, 2, ...[3, 4]];
 // REST on the left and must be the last element!!
@@ -68,6 +69,11 @@ const [pizza, , risotto, ...otherFood] = [
   ...restaurant.starterMenu,
 ];
 console.log(pizza, risotto, otherFood);
+
+// REST on objects
+// destructure weekdays' hours
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(sat, weekdays); // collects rest of properties into separate object
 
 // const ingredients = [
 //   prompt('What dough for your pizza?: '),
