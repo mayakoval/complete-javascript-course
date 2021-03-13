@@ -75,6 +75,20 @@ console.log(pizza, risotto, otherFood);
 const { sat, ...weekdays } = restaurant.openingHours;
 console.log(sat, weekdays); // collects rest of properties into separate object
 
+// 2) FUNCTIONS
+// use REST to account for an unknown amount of parameters
+const add = function (...numbers) {
+  let sum = 0;
+  console.log(numbers);
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+  console.log(sum);
+};
+add(3, 5, 6, 6); // REST arguments will be in an array
+// if wanted to use add on an array:
+const arrAdd = [3, 5, 7, 2];
+// use SPREAD to destructure arrAdd
+add(...arrAdd);
+
 // const ingredients = [
 //   prompt('What dough for your pizza?: '),
 //   prompt('What sauce on your pizza?: '),
