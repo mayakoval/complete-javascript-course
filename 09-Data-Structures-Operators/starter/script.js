@@ -49,6 +49,11 @@ const restaurant = {
       `Your pizza is on ${dough} dough with ${sauce} sauce and ${topping} on top. Yummy!`
     );
   },
+
+  orderPasta: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
 };
 
 // rest pattern
@@ -88,6 +93,9 @@ add(3, 5, 6, 6); // REST arguments will be in an array
 const arrAdd = [3, 5, 7, 2];
 // use SPREAD to destructure arrAdd
 add(...arrAdd);
+
+// order a very cheesy pasta, with other ingredients listed in a separate array
+restaurant.orderPasta('cheese', 'tomatoes', 'basil', 'nduja');
 
 // const ingredients = [
 //   prompt('What dough for your pizza?: '),
