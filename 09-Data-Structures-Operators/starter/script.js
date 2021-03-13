@@ -51,46 +51,64 @@ const restaurant = {
   },
 };
 
-const ingredients = [
-  prompt('What dough for your pizza?: '),
-  prompt('What sauce on your pizza?: '),
-  prompt('What toppings would you like?: '),
+// rest pattern
+// looks like spread operator, does the opposite
+
+// spread operator on the right
+const arr = [1, 2, ...[3, 4]];
+// REST on the left and must be the last element!!
+// after element b, takes the remaining ones & puts in array
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+
+// REST pattern for combining arrays
+// skip the 2nd main and combine with starters
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
 ];
-restaurant.orderPizza(...ingredients);
+console.log(pizza, risotto, otherFood);
 
-// objects
-const newRestaurant = { ...restaurant, founder: 'Roberto' };
-console.log(newRestaurant);
+// const ingredients = [
+//   prompt('What dough for your pizza?: '),
+//   prompt('What sauce on your pizza?: '),
+//   prompt('What toppings would you like?: '),
+// ];
+// restaurant.orderPizza(...ingredients);
 
-const restaurantCopy = { ...restaurant };
-restaurantCopy.name = 'Mamma Mia';
-console.log(restaurant.name === restaurantCopy.name); // false
+// // objects
+// const newRestaurant = { ...restaurant, founder: 'Roberto' };
+// console.log(newRestaurant);
 
-// spread operator
-const arr = [6, 4, 2];
-const badArr = [1, 2, arr[0], arr[1], arr[2]];
-const goodArr = [1, 2, ...arr];
-console.log(badArr, goodArr); // same array
-// spread operator takes all the elements from goodArr
-// but does NOT create new variables, unlike destructuring
-console.log(...goodArr);
+// const restaurantCopy = { ...restaurant };
+// restaurantCopy.name = 'Mamma Mia';
+// console.log(restaurant.name === restaurantCopy.name); // false
 
-const newMenu = [...restaurant.mainMenu, 'Spaghetti'];
-console.log(newMenu);
+// // spread operator
+// const arr = [6, 4, 2];
+// const badArr = [1, 2, arr[0], arr[1], arr[2]];
+// const goodArr = [1, 2, ...arr];
+// console.log(badArr, goodArr); // same array
+// // spread operator takes all the elements from goodArr
+// // but does NOT create new variables, unlike destructuring
+// console.log(...goodArr);
 
-// create a shallow copy of the mainMenu
-const mainMenuCopy = [...restaurant.mainMenu];
-console.log(mainMenuCopy);
+// const newMenu = [...restaurant.mainMenu, 'Spaghetti'];
+// console.log(newMenu);
 
-// merge arrays
-const fullMenu = [...restaurant.starterMenu, ...restaurant.mainMenu];
-console.log(fullMenu);
+// // create a shallow copy of the mainMenu
+// const mainMenuCopy = [...restaurant.mainMenu];
+// console.log(mainMenuCopy);
 
-// works on strings too
-const str = 'Maya';
-// would NOT work in string interpolation
-const letters = [...str];
-console.log(letters);
+// // merge arrays
+// const fullMenu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// console.log(fullMenu);
+
+// // works on strings too
+// const str = 'Maya';
+// // would NOT work in string interpolation
+// const letters = [...str];
+// console.log(letters);
 
 // // one object = one argument
 // restaurant.orderDelivery({
