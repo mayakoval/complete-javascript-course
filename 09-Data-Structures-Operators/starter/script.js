@@ -56,46 +56,54 @@ const restaurant = {
   },
 };
 
-// rest pattern
-// looks like spread operator, does the opposite
+// Booleans: can use & return any data type
+// Short-circuting, e.g.
 
-// 1) DESTRUCTURING
-// spread operator on the right
-const arr = [1, 2, ...[3, 4]];
-// REST on the left and must be the last element!!
-// after element b, takes the remaining ones & puts in array
-const [a, b, ...others] = [1, 2, 3, 4, 5];
-console.log(a, b, others);
+console.log(3 || 'Hey'); // returns 3 as it's truthy
+console.log('' || 'Hey'); // 'Hey'
+console.log(true || 0); // true
+console.log(undefined || null); // null
 
-// REST pattern for combining arrays
-// skip the 2nd main and combine with starters
-const [pizza, , risotto, ...otherFood] = [
-  ...restaurant.mainMenu,
-  ...restaurant.starterMenu,
-];
-console.log(pizza, risotto, otherFood);
+// // rest pattern
+// // looks like spread operator, does the opposite
 
-// REST on objects
-// destructure weekdays' hours
-const { sat, ...weekdays } = restaurant.openingHours;
-console.log(sat, weekdays); // collects rest of properties into separate object
+// // 1) DESTRUCTURING
+// // spread operator on the right
+// const arr = [1, 2, ...[3, 4]];
+// // REST on the left and must be the last element!!
+// // after element b, takes the remaining ones & puts in array
+// const [a, b, ...others] = [1, 2, 3, 4, 5];
+// console.log(a, b, others);
 
-// 2) FUNCTIONS
-// use REST to account for an unknown amount of parameters
-const add = function (...numbers) {
-  let sum = 0;
-  console.log(numbers);
-  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
-  console.log(sum);
-};
-add(3, 5, 6, 6); // REST arguments will be in an array
-// if wanted to use add on an array:
-const arrAdd = [3, 5, 7, 2];
-// use SPREAD to destructure arrAdd
-add(...arrAdd);
+// // REST pattern for combining arrays
+// // skip the 2nd main and combine with starters
+// const [pizza, , risotto, ...otherFood] = [
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
+// ];
+// console.log(pizza, risotto, otherFood);
 
-// order a very cheesy pasta, with other ingredients listed in a separate array
-restaurant.orderPasta('cheese', 'tomatoes', 'basil', 'nduja');
+// // REST on objects
+// // destructure weekdays' hours
+// const { sat, ...weekdays } = restaurant.openingHours;
+// console.log(sat, weekdays); // collects rest of properties into separate object
+
+// // 2) FUNCTIONS
+// // use REST to account for an unknown amount of parameters
+// const add = function (...numbers) {
+//   let sum = 0;
+//   console.log(numbers);
+//   for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+//   console.log(sum);
+// };
+// add(3, 5, 6, 6); // REST arguments will be in an array
+// // if wanted to use add on an array:
+// const arrAdd = [3, 5, 7, 2];
+// // use SPREAD to destructure arrAdd
+// add(...arrAdd);
+
+// // order a very cheesy pasta, with other ingredients listed in a separate array
+// restaurant.orderPasta('cheese', 'tomatoes', 'basil', 'nduja');
 
 // const ingredients = [
 //   prompt('What dough for your pizza?: '),
