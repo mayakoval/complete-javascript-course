@@ -57,12 +57,14 @@ const restaurant = {
 };
 
 // Booleans: can use & return any data type
-// Short-circuting, e.g.
+// Short-circuiting, e.g.
 
 console.log(3 || 'Hey'); // returns 3 as it's truthy
 console.log('' || 'Hey'); // 'Hey'
 console.log(true || 0); // true
 console.log(undefined || null); // null
+console.log(0 && 'Hey'); // 0 -> whole result is false
+console.log(7 && 'Hey'); // Hey -> both results are truthy, will print 7
 
 // // rest pattern
 // // looks like spread operator, does the opposite
