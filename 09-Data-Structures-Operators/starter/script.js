@@ -66,6 +66,14 @@ console.log(undefined || null); // null
 console.log(0 && 'Hey'); // 0 -> whole result is false
 console.log(7 && 'Hey'); // Hey -> both results are truthy, will print 7
 
+// example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('thick', 'tomato', 'mushroom');
+}
+// is the same as:
+// check if truthy, if so execute orderPizza
+restaurant.orderPizza && restaurant.orderPizza('thick', 'tomato', 'mushroom');
+
 // // rest pattern
 // // looks like spread operator, does the opposite
 
