@@ -56,10 +56,22 @@ const restaurant = {
   },
 };
 
-restaurant.numGuests = 0;
-// nullish values are: null and undefined (NOT 0 or '')
-const guestCorrect = restaurant.numGuests ?? 10; // will return 10 if numGuests is not defined
-console.log(guestCorrect);
+// looping over arrays
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+// list each item from const menu
+for (const item of menu) console.log(item);
+
+// list items with the corresponding index
+// .entries is an array iterator
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}. ${el}`);
+}
+
+// restaurant.numGuests = 0;
+// // nullish values are: null and undefined (NOT 0 or '')
+// const guestCorrect = restaurant.numGuests ?? 10; // will return 10 if numGuests is not defined
+// console.log(guestCorrect);
 
 // // Booleans: can use & return any data type
 // // Short-circuiting, e.g.
