@@ -64,8 +64,25 @@ if (restaurant.openingHours && restaurant.openingHours.mon)
   console.log(restaurant.openingHours.mon.open);
 
 // with optional chaining
-console.log(restaurant.openingHours.mon.open); // error as mon is undefined
+// console.log(restaurant.openingHours.mon.open); // error as mon is undefined
 console.log(restaurant.openingHours.mon?.open); // returns undefined
+
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+for (const day of days) {
+  console.log(day);
+  // does open exist for a given day?
+  // Saturday opens at 0 which is a falsey value
+  const open = restaurant.openingHours[day]?.open || "Sorry, we're closed";
+  // nullish coalescing operator in action
+  // will show Sat opening hour
+  const openAll = restaurant.openingHours[day]?.open ?? "Sorry, we're closed";
+  console.log(openAll);
+}
+
+// check if method exists
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist'); // yes
+console.log(restaurant.orderSoup?.(0, 1) ?? 'Method does not exist'); // no
 
 // // looping over arrays
 // const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
