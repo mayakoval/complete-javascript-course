@@ -60,30 +60,54 @@ const restaurant = {
   },
 };
 
-// call keys
-const properties = Object.keys(openingHours);
+// set: collection of unique elements
+// can hold different data types
 
-let openStr = `We are open on ${properties.length} days: `;
+const ordersSet = new Set(['Pasta', 'Pizza', 'Risotto', 'Pizza']); // duplicates won't show
+console.log(ordersSet);
 
-for (const day of properties) {
-  openStr += `${day}, `;
-}
+// iterate over a string
+console.log(new Set('Delicious pizza').size); // returns 12 as # of elements
+// includes method for a set - has
+console.log(ordersSet.has('Pizza')); // true
+console.log(ordersSet.has('Gnocci')); // false
+console.log(ordersSet.add('Garlic bread'));
+// there are no indexes so delete value by its key
+ordersSet.delete('Garlic bread');
+console.log(ordersSet);
 
-console.log(openStr);
+// can iterate over a set
+for (const set of ordersSet) console.log(set);
 
-// call values
-const hours = Object.values(openingHours);
-console.log(hours);
+const staff = ['waiter', 'manager', 'manager', 'manager', 'chef'];
+// spread operator will deconstruct the set into an array
+const staffUniq = [...new Set(staff)];
+console.log(staffUniq);
 
-// call entries
-const entries = Object.entries(openingHours);
-// console.log(entries);
+// // call keys
+// const properties = Object.keys(openingHours);
 
-// destructure entries object to show opening and closing times
-// at a given week day (key)
-for (const [key, { open, close }] of entries) {
-  console.log(`On ${key} we open at ${open} and close at ${close}`);
-}
+// let openStr = `We are open on ${properties.length} days: `;
+
+// for (const day of properties) {
+//   openStr += `${day}, `;
+// }
+
+// console.log(openStr);
+
+// // call values
+// const hours = Object.values(openingHours);
+// console.log(hours);
+
+// // call entries
+// const entries = Object.entries(openingHours);
+// // console.log(entries);
+
+// // destructure entries object to show opening and closing times
+// // at a given week day (key)
+// for (const [key, { open, close }] of entries) {
+//   console.log(`On ${key} we open at ${open} and close at ${close}`);
+// }
 
 // if (restaurant.openingHours && restaurant.openingHours.mon)
 //   console.log(restaurant.openingHours.mon.open);
