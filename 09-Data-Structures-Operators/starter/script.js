@@ -60,6 +60,13 @@ const restaurant = {
   },
 };
 
+if (restaurant.openingHours && restaurant.openingHours.mon)
+  console.log(restaurant.openingHours.mon.open);
+
+// with optional chaining
+console.log(restaurant.openingHours.mon.open); // error as mon is undefined
+console.log(restaurant.openingHours.mon?.open); // returns undefined
+
 // // looping over arrays
 // const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
