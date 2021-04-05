@@ -60,29 +60,54 @@ const restaurant = {
   },
 };
 
-if (restaurant.openingHours && restaurant.openingHours.mon)
-  console.log(restaurant.openingHours.mon.open);
+// call keys
+const properties = Object.keys(openingHours);
 
-// with optional chaining
-// console.log(restaurant.openingHours.mon.open); // error as mon is undefined
-console.log(restaurant.openingHours.mon?.open); // returns undefined
+let openStr = `We are open on ${properties.length} days: `;
 
-const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
-
-for (const day of days) {
-  console.log(day);
-  // does open exist for a given day?
-  // Saturday opens at 0 which is a falsey value
-  const open = restaurant.openingHours[day]?.open || "Sorry, we're closed";
-  // nullish coalescing operator in action
-  // will show Sat opening hour
-  const openAll = restaurant.openingHours[day]?.open ?? "Sorry, we're closed";
-  console.log(openAll);
+for (const day of properties) {
+  openStr += `${day}, `;
 }
 
-// check if method exists
-console.log(restaurant.order?.(0, 1) ?? 'Method does not exist'); // yes
-console.log(restaurant.orderSoup?.(0, 1) ?? 'Method does not exist'); // no
+console.log(openStr);
+
+// call values
+const hours = Object.values(openingHours);
+console.log(hours);
+
+// call entries
+const entries = Object.entries(openingHours);
+// console.log(entries);
+
+// destructure entries object to show opening and closing times
+// at a given week day (key)
+for (const [key, { open, close }] of entries) {
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+}
+
+// if (restaurant.openingHours && restaurant.openingHours.mon)
+//   console.log(restaurant.openingHours.mon.open);
+
+// // with optional chaining
+// // console.log(restaurant.openingHours.mon.open); // error as mon is undefined
+// console.log(restaurant.openingHours.mon?.open); // returns undefined
+
+// const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+// for (const day of days) {
+//   console.log(day);
+//   // does open exist for a given day?
+//   // Saturday opens at 0 which is a falsey value
+//   const open = restaurant.openingHours[day]?.open || "Sorry, we're closed";
+//   // nullish coalescing operator in action
+//   // will show Sat opening hour
+//   const openAll = restaurant.openingHours[day]?.open ?? "Sorry, we're closed";
+//   console.log(openAll);
+// }
+
+// // check if method exists
+// console.log(restaurant.order?.(0, 1) ?? 'Method does not exist'); // yes
+// console.log(restaurant.orderSoup?.(0, 1) ?? 'Method does not exist'); // no
 
 // // looping over arrays
 // const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
