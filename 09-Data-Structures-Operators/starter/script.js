@@ -60,29 +60,57 @@ const restaurant = {
   },
 };
 
-// set: collection of unique elements
-// can hold different data types
+// map - similar to Ruby's hash
+const rest = new Map();
+rest.set('name', 'Hey Ho');
 
-const ordersSet = new Set(['Pasta', 'Pizza', 'Risotto', 'Pizza']); // duplicates won't show
-console.log(ordersSet);
+rest
+  .set('categories', ['Italian', 'Vegetarian', 'Mexican'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open')
+  .set(false, "Sorry, we're closed");
 
-// iterate over a string
-console.log(new Set('Delicious pizza').size); // returns 12 as # of elements
-// includes method for a set - has
-console.log(ordersSet.has('Pizza')); // true
-console.log(ordersSet.has('Gnocci')); // false
-console.log(ordersSet.add('Garlic bread'));
-// there are no indexes so delete value by its key
-ordersSet.delete('Garlic bread');
-console.log(ordersSet);
+console.log(rest.get('categories')); // returns categories array
+console.log(rest.has('categories')); // returns true
+const time = 21;
+// will return we are open
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+rest.delete('name');
+console.log(rest);
+// set an array as a key
+rest.set([1, 2], 'test rest');
+console.log(rest, rest.size);
 
-// can iterate over a set
-for (const set of ordersSet) console.log(set);
+console.log(rest.get([1, 2])); // returns undefined
+const arr = [3, 4];
+rest.set(arr, 'rest two');
+console.log(rest.get(arr)); // returns rest two
 
-const staff = ['waiter', 'manager', 'manager', 'manager', 'chef'];
-// spread operator will deconstruct the set into an array
-const staffUniq = [...new Set(staff)];
-console.log(staffUniq);
+// // set: collection of unique elements
+// // can hold different data types
+// // values are unique & unordered
+
+// const ordersSet = new Set(['Pasta', 'Pizza', 'Risotto', 'Pizza']); // duplicates won't show
+// console.log(ordersSet);
+
+// // iterate over a string
+// console.log(new Set('Delicious pizza').size); // returns 12 as # of elements
+// // includes method for a set - has
+// console.log(ordersSet.has('Pizza')); // true
+// console.log(ordersSet.has('Gnocci')); // false
+// console.log(ordersSet.add('Garlic bread'));
+// // there are no indexes so delete value by its key
+// ordersSet.delete('Garlic bread');
+// console.log(ordersSet);
+
+// // can iterate over a set
+// for (const set of ordersSet) console.log(set);
+
+// const staff = ['waiter', 'manager', 'manager', 'manager', 'chef'];
+// // spread operator will deconstruct the set into an array
+// const staffUniq = [...new Set(staff)];
+// console.log(staffUniq);
 
 // // call keys
 // const properties = Object.keys(openingHours);
