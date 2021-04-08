@@ -2,91 +2,121 @@
 
 // Data needed for a later exercise
 const flights =
-  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+	'_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
 const openingHours = {
-  thu: {
-    open: 12,
-    close: 22,
-  },
-  fri: {
-    open: 11,
-    close: 23,
-  },
-  sat: {
-    open: 0, // Open 24 hours
-    close: 24,
-  },
+	thu: {
+		open: 12,
+		close: 22,
+	},
+	fri: {
+		open: 11,
+		close: 23,
+	},
+	sat: {
+		open: 0, // Open 24 hours
+		close: 24,
+	},
 };
 
 // Data needed for first part of the section
 const restaurant = {
-  name: 'Classico Italiano',
-  location: 'Via Angelo Tavanti 23, Firenze, Italy',
-  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+	name: 'Classico Italiano',
+	location: 'Via Angelo Tavanti 23, Firenze, Italy',
+	categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+	starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+	mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  // ES6 enhanced object literals
+	// ES6 enhanced object literals
 
-  openingHours,
+	openingHours,
 
-  order(starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
+	order(starterIndex, mainIndex) {
+		return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+	},
 
-  // method for destructuring object
-  // one object makes multiple arguments
-  orderDelivery({ starterIndex, mainIndex, time, address }) {
-    // setting default values
-    (starterIndex = 1),
-      (mainIndex = 0),
-      (time = '20:00'),
-      address,
-      console.log(
-        `Order for received! \n Starter: ${this.starterMenu[starterIndex]}, \n Main: ${this.mainMenu[mainIndex]} \n to be delivered to ${address} for ${time}`
-      );
-  },
+	// method for destructuring object
+	// one object makes multiple arguments
+	orderDelivery({ starterIndex, mainIndex, time, address }) {
+		// setting default values
+		(starterIndex = 1),
+			(mainIndex = 0),
+			(time = '20:00'),
+			address,
+			console.log(
+				`Order for received! \n Starter: ${this.starterMenu[starterIndex]}, \n Main: ${this.mainMenu[mainIndex]} \n to be delivered to ${address} for ${time}`
+			);
+	},
 
-  orderPizza(dough, sauce, topping) {
-    console.log(
-      `Your pizza is on ${dough} dough with ${sauce} sauce and ${topping} on top. Yummy!`
-    );
-  },
+	orderPizza(dough, sauce, topping) {
+		console.log(
+			`Your pizza is on ${dough} dough with ${sauce} sauce and ${topping} on top. Yummy!`
+		);
+	},
 
-  orderPasta(mainIngredient, ...otherIngredients) {
-    console.log(mainIngredient);
-    console.log(otherIngredients);
-  },
+	orderPasta(mainIngredient, ...otherIngredients) {
+		console.log(mainIngredient);
+		console.log(otherIngredients);
+	},
 };
 
-// map - similar to Ruby's hash
-const rest = new Map();
-rest.set('name', 'Hey Ho');
+// // map: similar to Ruby's hash
+// const rest = new Map();
+// rest.set('name', 'Hey Ho');
 
-rest
-  .set('categories', ['Italian', 'Vegetarian', 'Mexican'])
-  .set('open', 11)
-  .set('close', 23)
-  .set(true, 'We are open')
-  .set(false, "Sorry, we're closed");
+// rest
+//   .set('categories', ['Italian', 'Vegetarian', 'Mexican'])
+//   .set('open', 11)
+//   .set('close', 23)
+//   .set(true, 'We are open')
+//   .set(false, "Sorry, we're closed");
 
-console.log(rest.get('categories')); // returns categories array
-console.log(rest.has('categories')); // returns true
-const time = 21;
-// will return we are open
-console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
-rest.delete('name');
-console.log(rest);
-// set an array as a key
-rest.set([1, 2], 'test rest');
-console.log(rest, rest.size);
+// console.log(rest.get('categories')); // returns categories array
+// console.log(rest.has('categories')); // returns true
+// const time = 21;
+// // will return we are open
+// console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+// rest.delete('name');
+// console.log(rest);
+// // set an array as a key
+// rest.set([1, 2], 'test rest');
+// console.log(rest, rest.size);
 
-console.log(rest.get([1, 2])); // returns undefined
-const arr = [3, 4];
-rest.set(arr, 'rest two');
-console.log(rest.get(arr)); // returns rest two
+// console.log(rest.get([1, 2])); // returns undefined
+// const arr = [3, 4];
+// rest.set(arr, 'rest two');
+// console.log(rest.get(arr)); // returns rest two
 
+// iterate over map
+
+const quiz = new Map([
+	['question', 'Best programming language?'],
+	[1, 'C'],
+	[2, 'Java'],
+	[3, 'Javascript'],
+	['correct', 3],
+	[true, 'Correct!'],
+	[false, 'Try again'],
+]);
+
+// convert object to a map
+console.log(Object.entries(openingHours)); // returns 3 arrays
+const mapHours = new Map(Object.entries(openingHours));
+console.log(mapHours); // returns 3 object entries
+
+alert(quiz.get('question'));
+// map is an iterable, unlike object
+// so question doesn't need destructuring
+for (const [key, value] of quiz) {
+	if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+
+const answer = Number(prompt('Your answer: '));
+if (
+	answer === quiz.get('correct')
+		? alert(quiz.get(true))
+		: alert(quiz.get(false))
+);
 // // set: collection of unique elements
 // // can hold different data types
 // // values are unique & unordered
