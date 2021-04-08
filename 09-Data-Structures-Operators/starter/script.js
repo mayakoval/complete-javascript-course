@@ -60,6 +60,29 @@ const restaurant = {
 	},
 };
 
+const airline = 'LOT Airlines';
+const plane = 'A320';
+
+// a string can be iterated over thanks to boxing
+// string converted into object which is iterated over
+console.log(plane[0]);
+console.log(plane.indexOf('A'));
+console.log(plane.slice(2)); // slices 'A320' at index 2 -> takes A3, leaves 20
+console.log(plane.slice(2, 3)); // cuts off '0' as its index is 3
+
+console.log(airline.slice(0, airline.indexOf(' '))); // returns LOT
+
+const checkMiddleSeat = seat => {
+	const letter = seat.slice(-1);
+	if (
+		letter === 'B' || letter === 'E'
+			? console.log("That's a middle seat")
+			: console.log("That's NOT a middle seat")
+	);
+};
+
+checkMiddleSeat('11B');
+
 // // map: similar to Ruby's hash
 // const rest = new Map();
 // rest.set('name', 'Hey Ho');
@@ -87,41 +110,41 @@ const restaurant = {
 // rest.set(arr, 'rest two');
 // console.log(rest.get(arr)); // returns rest two
 
-// iterate over map
+// // iterate over map
 
-const quiz = new Map([
-	['question', 'Best programming language?'],
-	[1, 'C'],
-	[2, 'Java'],
-	[3, 'Javascript'],
-	['correct', 3],
-	[true, 'Correct!'],
-	[false, 'Try again'],
-]);
+// const quiz = new Map([
+// 	['question', 'Best programming language?'],
+// 	[1, 'C'],
+// 	[2, 'Java'],
+// 	[3, 'Javascript'],
+// 	['correct', 3],
+// 	[true, 'Correct!'],
+// 	[false, 'Try again'],
+// ]);
 
-// convert object to a map
-console.log(Object.entries(openingHours)); // returns 3 arrays
-const mapHours = new Map(Object.entries(openingHours));
-console.log(mapHours); // returns 3 object entries
+// // convert object to a map
+// console.log(Object.entries(openingHours)); // returns 3 arrays
+// const mapHours = new Map(Object.entries(openingHours));
+// console.log(mapHours); // returns 3 object entries
 
-alert(quiz.get('question'));
-// map is an iterable, unlike object
-// so question doesn't need destructuring
-for (const [key, value] of quiz) {
-	if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
-}
+// alert(quiz.get('question'));
+// // map is an iterable, unlike object
+// // so question doesn't need destructuring
+// for (const [key, value] of quiz) {
+// 	if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+// }
 
-const answer = Number(prompt('Your answer: '));
-if (
-	answer === quiz.get('correct')
-		? alert(quiz.get(true))
-		: alert(quiz.get(false))
-);
+// const answer = Number(prompt('Your answer: '));
+// if (
+// 	answer === quiz.get('correct')
+// 		? alert(quiz.get(true))
+// 		: alert(quiz.get(false))
+// );
 
-// convert map to array with spread operator
-console.log(...quiz);
-// get keys/values only
-console.log([...quiz.keys()]);
+// // convert map to array with spread operator
+// console.log(...quiz);
+// // get keys/values only
+// console.log([...quiz.keys()]);
 
 // // set: collection of unique elements
 // // can hold different data types
