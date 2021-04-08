@@ -63,25 +63,61 @@ const restaurant = {
 const airline = 'LOT Airlines';
 const plane = 'A320';
 
-// a string can be iterated over thanks to boxing
-// string converted into object which is iterated over
-console.log(plane[0]);
-console.log(plane.indexOf('A'));
-console.log(plane.slice(2)); // slices 'A320' at index 2 -> takes A3, leaves 20
-console.log(plane.slice(2, 3)); // cuts off '0' as its index is 3
+const lowerCaseAirline = airline.toLowerCase();
+const modifiedAirline =
+	lowerCaseAirline[0].toUpperCase() + lowerCaseAirline.slice(1);
+console.log(modifiedAirline); // Lot airlines
 
-console.log(airline.slice(0, airline.indexOf(' '))); // returns LOT
+const email = 'hello@world.com';
+const loginEmail = '  HellO@world.Com \n';
 
-const checkMiddleSeat = seat => {
-	const letter = seat.slice(-1);
-	if (
-		letter === 'B' || letter === 'E'
-			? console.log("That's a middle seat")
-			: console.log("That's NOT a middle seat")
-	);
+const correctEmail = loginEmail.toLowerCase().trim();
+if (correctEmail === email) console.log(correctEmail);
+
+const priceGB = '£267,90';
+const priceUS = priceGB.replace('£', '$').replace(',', '.');
+console.log(priceGB, priceUS);
+console.log(priceUS.replace('267', '270')); // target first occurence of 267
+// to target all occurences, use /expressionToReplace/g
+console.log(plane.includes('A')); // true
+console.log(plane.includes('Boeing')); // false
+console.log(plane.startsWith('B')); // false
+
+const permittedLuggage = items => {
+	const luggage = items.toLowerCase().trim();
+	if (luggage.includes('knife' || luggage.includes('weapon'))) {
+		return `You're not allowed to enter the plane`;
+	} else {
+		return 'Welcome aboard!';
+	}
 };
 
-checkMiddleSeat('11B');
+console.log(
+	`Passenger 1: ${permittedLuggage('I have laptop and a pocket knife')}`
+);
+console.log(
+	`Passenger 2: ${permittedLuggage('Just clothes and a toothbrush')}`
+);
+
+// // a string can be iterated over thanks to boxing
+// // string converted into object which is iterated over
+// console.log(plane[0]);
+// console.log(plane.indexOf('A'));
+// console.log(plane.slice(2)); // slices 'A320' at index 2 -> takes A3, leaves 20
+// console.log(plane.slice(2, 3)); // cuts off '0' as its index is 3
+
+// console.log(airline.slice(0, airline.indexOf(' '))); // returns LOT
+
+// const checkMiddleSeat = seat => {
+// 	const letter = seat.slice(-1);
+// 	if (
+// 		letter === 'B' || letter === 'E'
+// 			? console.log("That's a middle seat")
+// 			: console.log("That's NOT a middle seat")
+// 	);
+// };
+
+// checkMiddleSeat('11B');
 
 // // map: similar to Ruby's hash
 // const rest = new Map();
