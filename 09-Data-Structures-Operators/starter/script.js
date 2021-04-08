@@ -117,6 +117,12 @@ if (
 		? alert(quiz.get(true))
 		: alert(quiz.get(false))
 );
+
+// convert map to array with spread operator
+console.log(...quiz);
+// get keys/values only
+console.log([...quiz.keys()]);
+
 // // set: collection of unique elements
 // // can hold different data types
 // // values are unique & unordered
